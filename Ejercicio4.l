@@ -38,15 +38,7 @@ int main(int argc, char*argv[]){
 void escribir_datos(int dato1, int dato2, int dato3){
   printf("Num_caracteres=%d\tNum_palabras=%d\tNum_lineas=%d\n",dato1, dato2, dato3);
 }
-void encriptado(char* cadena){
-  char temporal;
-  int longitud=strlen(cadena);
-  int i;
-  int j;
-  for (i=0,j=longitud-1; i<longitud/2; i++,j--)
-  {
-    temporal=cadena[i];
-    cadena[i]=cadena[j];
-    cadena[j]=temporal;
-  }
+
+void Detectar(){
+  printf("Detectada cabecera\n")
 }
