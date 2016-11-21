@@ -3,15 +3,16 @@
 #include <stdlib.h>
 int nc, np, nl;
 FILE* fp;
+void Detectar();
+%{
 
-void encriptado(char* solucion);
+}
+
 %}
 %%
-[^\b\t\n]+  {encriptado(yytext);fputs(yytext, fp);}
-[^\t\n]+  {fputs(yytext, fp);}
-[\t]+     {fputs(yytext, fp);}
-\n        {fputs(yytext, fp);}
+//                        {BEGIN COMENTARIOL_C}
 
+<COMENTARIOL_C>
 %%
 
 int main(int argc, char*argv[]){
