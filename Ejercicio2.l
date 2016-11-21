@@ -25,6 +25,7 @@ int main(int argc, char*argv[]){
   escribir_datos(nc, np, nl);
   return 0;
 }
+//prueba de git
 
 void escribir_datos(int dato1, int dato2, int dato3){
   printf("Num_caracteres=%d\tNum_palabras=%d\tNum_lineas=%d\n",dato1, dato2, dato3);
