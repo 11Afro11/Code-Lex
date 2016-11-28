@@ -13,6 +13,7 @@ void Detectar();
 #Section:                        {BEGIN SECTION_1}
 
 <SECTION_1>.+                    {EscribeSection(yytext)}
+<SECTION_1>#Subsection:          
 %%
 
 int main(int argc, char*argv[]){
