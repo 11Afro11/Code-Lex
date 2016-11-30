@@ -4,6 +4,16 @@
 int nc, np, nl;
 FILE* fp;
 void Detectar();
+void EscribeSection(char* cadena);
+
+void EscribeSubsection(char* cadena);
+
+void EscribeMinted(char*cadena);
+
+void Cabecera();
+
+void Final();
+
 %{
 
 }
@@ -13,7 +23,6 @@ void Detectar();
 #Section:                        {BEGIN SECTION_1}
 
 <SECTION_1>.+                    {EscribeSection(yytext)}
-<SECTION_1>#Subsection:          
 %%
 
 int main(int argc, char*argv[]){
@@ -32,7 +41,7 @@ int main(int argc, char*argv[]){
   else yyin = stdin;
   nc = np = nl = 0;
 
-
+  Cabecera();
   yylex();
   return 0;
 }
@@ -54,7 +63,16 @@ void EscribeMinted(char*cadena){
 }
 
 void Cabecera(){
-
+  fin = fopen("./Latex/Cabecera.txt","rt");
+	if(fin == NULL){
+    printf("El fichero no se puede abrir\n");
+    exit(-1);
+	}
+	string texto;
+	while(getline(fin,texto)){
+		fp << texto<<endl;
+	}
+	fin.clear();
 }
 
 void Final(){

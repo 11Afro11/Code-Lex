@@ -1,0 +1,41 @@
+\documentclass[0.01pt,a4paper,spanish]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsthm}
+\usepackage{amsfonts, amssymb, latexsym}
+\usepackage{enumerate}
+\usepackage[official]{eurosym}
+\usepackage{graphicx}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage[all]{xy}
+\usepackage[below]{placeins}
+\usepackage{subfigure}
+\usepackage{eso-pic}
+\usepackage{lastpage}
+
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,
+keepaspectratio]{hola.jpg}
+\vfill
+}}}
+
+\DeclareGraphicsExtensions{.png,.pdf,.jpg,.gif }
+
+
+
+\title{Examen Teórico de la Constitución Española de 1978}
+\author{Nombre:............................  Apellidos:..............................................}
+\date{\today}
+\begin{document}
+\AddToShipoutPicture{\BackgroundPic}
+\maketitle
+\textbf{Responda a las preguntas marcando una X en la casilla correspondiente.}
+\begin{enumerate}
