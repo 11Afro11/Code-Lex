@@ -57,8 +57,7 @@ void EscribeSection(char* cadena){
   char t;
   t = fgetc(fon);
   fputc(t, fp);
-  t = fgetc(fon);
-  fputc(t, fp);
+  
   fclose ( fon);
 }
 

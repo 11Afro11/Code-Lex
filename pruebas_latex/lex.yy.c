@@ -360,8 +360,8 @@ static void yynoreturn yy_fatal_error (yyconst char* msg  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 3
-#define YY_END_OF_BUFFER 4
+#define YY_NUM_RULES 10
+#define YY_END_OF_BUFFER 11
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -369,10 +369,17 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[17] =
+static yyconst flex_int16_t yy_accept[85] =
     {   0,
-        0,    0,    4,    2,    3,    2,    2,    2,    2,    2,
-        2,    2,    2,    2,    1,    0
+        0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+        0,    0,   11,   10,   10,   10,   10,    6,    7,   10,
+       10,   10,   10,    0,    0,    0,    0,    0,    0,    0,
+        6,    7,    0,    0,    0,    0,    0,    0,    0,    0,
+        0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+        0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+        5,    0,    0,    4,    0,    0,    0,    0,    0,    0,
+        0,    0,    0,    0,    8,    9,    0,    2,    0,    1,
+        0,    0,    3,    0
     } ;
 
 static yyconst YY_CHAR yy_ec[256] =
@@ -383,13 +390,13 @@ static yyconst YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    3,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    4,    1,    1,
+        1,    1,    1,    1,    1,    1,    5,    1,    6,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    5,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    6,    1,
+        1,    1,    7,    8,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    9,   10,   11,
 
-        7,    1,    1,    1,    8,    1,    1,    1,    1,    9,
-       10,    1,    1,    1,    1,   11,    1,    1,    1,    1,
+       12,    1,    1,    1,   13,    1,    1,    1,    1,   14,
+       15,    1,    1,    1,   16,   17,   18,    1,    1,   19,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -407,36 +414,86 @@ static yyconst YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst YY_CHAR yy_meta[12] =
+static yyconst YY_CHAR yy_meta[20] =
     {   0,
         1,    2,    1,    1,    1,    1,    1,    1,    1,    1,
-        1
+        1,    1,    1,    1,    1,    1,    1,    1,    1
     } ;
 
-static yyconst flex_uint16_t yy_base[19] =
+static yyconst flex_uint16_t yy_base[97] =
     {   0,
-        0,    2,   16,    0,   17,   10,    0,    7,    7,    1,
-        3,    0,    0,    4,    0,   17,    5,    0
+      149,  148,    0,    2,  147,  146,  145,  144,  142,  141,
+      140,  139,  141,  137,  152,  136,    3,    0,    0,  135,
+        6,  134,   10,  133,   11,  132,    0,    4,   17,   12,
+        0,    0,  131,   19,   14,  130,   20,   18,   24,   27,
+       30,   28,   31,   36,   38,   41,   40,   39,   42,   43,
+       45,   52,   51,   58,   56,   60,   61,   63,   64,   67,
+      129,   68,   71,  128,   70,   73,   75,   74,   79,   82,
+       83,   84,   88,   90,  127,  126,   97,  125,   91,  124,
+       94,  101,  123,  152,  108,  110,  112,  114,  116,  118,
+      124,  106,  101,    0,  120,  122
+
     } ;
 
-static yyconst flex_int16_t yy_def[19] =
+static yyconst flex_int16_t yy_def[97] =
     {   0,
-       17,   17,   16,   18,   16,   18,   18,   18,   18,   18,
-       18,   18,   18,   18,   18,    0,   16,   16
+       85,   85,   86,   86,   87,   87,   88,   88,   89,   89,
+       90,   90,   84,   91,   84,   92,   92,   93,   94,   95,
+       95,   96,   96,   91,   91,   92,   17,   92,   92,   92,
+       93,   94,   95,   95,   95,   96,   96,   96,   91,   92,
+       92,   92,   92,   95,   96,   91,   92,   92,   92,   92,
+       95,   96,   91,   92,   92,   92,   92,   95,   96,   91,
+       92,   92,   92,   92,   95,   96,   91,   92,   92,   95,
+       96,   91,   92,   92,   95,   96,   91,   92,   92,   91,
+       92,   92,   92,    0,   84,   84,   84,   84,   84,   84,
+       84,   84,   84,   84,   84,   84
+
     } ;
 
-static yyconst flex_uint16_t yy_nxt[29] =
+static yyconst flex_uint16_t yy_nxt[172] =
     {   0,
-        7,    5,    6,    5,    6,    4,    4,   15,   14,   13,
-       12,   11,   10,    9,    8,   16,    3,   16,   16,   16,
-       16,   16,   16,   16,   16,   16,   16,   16
+       32,   15,   17,   15,   17,   27,   27,   28,   34,   29,
+       30,   35,   37,   25,   27,   38,   34,   39,   40,   27,
+       37,   34,   37,   43,   35,   38,   25,   44,   41,   27,
+       27,   45,   27,   27,   42,   46,   49,   47,   34,   48,
+       37,   27,   27,   25,   27,   27,   51,   34,   52,   50,
+       53,   54,   58,   25,   37,   55,   59,   56,   27,   57,
+       27,   61,   27,   27,   64,   34,   37,   60,   62,   25,
+       27,   63,   34,   27,   65,   37,   27,   25,   66,   67,
+       69,   27,   68,   71,   34,   37,   25,   73,   70,   72,
+       27,   78,   27,   27,   76,   74,   27,   77,   75,   25,
+
+       80,   31,   79,   27,   83,   81,   26,   82,   14,   14,
+       16,   16,   18,   18,   19,   19,   20,   20,   22,   22,
+       33,   33,   36,   36,   24,   27,   25,   27,   37,   34,
+       27,   27,   37,   34,   27,   25,   37,   34,   27,   25,
+       84,   23,   23,   21,   21,   15,   15,   15,   15,   15,
+       15,   13,   84,   84,   84,   84,   84,   84,   84,   84,
+       84,   84,   84,   84,   84,   84,   84,   84,   84,   84,
+       84
     } ;
 
-static yyconst flex_int16_t yy_chk[29] =
+static yyconst flex_int16_t yy_chk[172] =
     {   0,
-       18,    1,    1,    2,    2,   17,   17,   14,   13,   12,
-       11,   10,    9,    8,    6,    3,   16,   16,   16,   16,
-       16,   16,   16,   16,   16,   16,   16,   16
+       94,    3,    3,    4,    4,   17,   28,   17,   21,   17,
+       17,   21,   23,   25,   30,   23,   35,   25,   28,   29,
+       38,   34,   37,   30,   34,   37,   39,   35,   29,   40,
+       42,   38,   41,   43,   29,   39,   42,   40,   44,   41,
+       45,   48,   47,   46,   49,   50,   44,   51,   45,   43,
+       46,   47,   51,   53,   52,   48,   52,   49,   55,   50,
+       54,   54,   56,   57,   57,   58,   59,   53,   55,   60,
+       62,   56,   65,   63,   58,   66,   68,   67,   59,   60,
+       63,   69,   62,   66,   70,   71,   72,   68,   65,   67,
+       73,   73,   74,   79,   71,   69,   81,   72,   70,   77,
+
+       77,   93,   74,   82,   82,   79,   92,   81,   85,   85,
+       86,   86,   87,   87,   88,   88,   89,   89,   90,   90,
+       95,   95,   96,   96,   91,   83,   80,   78,   76,   75,
+       64,   61,   36,   33,   26,   24,   22,   20,   16,   14,
+       13,   12,   11,   10,    9,    8,    7,    6,    5,    2,
+        1,   84,   84,   84,   84,   84,   84,   84,   84,   84,
+       84,   84,   84,   84,   84,   84,   84,   84,   84,   84,
+       84
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -454,19 +511,34 @@ int yy_flex_debug = 0;
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
 #line 1 "Code-lex.l"
-#line 2 "Code-lex.l"
-#include<stdio.h>
+
+
+
+
+
+#line 8 "Code-lex.l"
+#include <stdio.h>
 #include <stdlib.h>
 int nc, np, nl;
 FILE* fp;
-void Detectar();
-%{
 
-}
+void EscribeSection(char* cadena);
 
-#line 468 "lex.yy.c"
+void EscribeSubsection(char* cadena);
+
+void EscribeTexto(char* cadena);
+
+void EscribeMinted(char* cadena);
+
+//void Cabecera();
+#line 535 "lex.yy.c"
 
 #define INITIAL 0
+#define SECTION_1 1
+#define CAPTATITULO_SECTION 2
+#define CAPTATITULO_SUBSECTION 3
+#define CAPTATEXTO 4
+#define CAPTACODIGO 5
 
 #ifndef YY_NO_UNISTD_H
 /* Special case for "unistd.h", since it is non-ANSI. We include it way
@@ -682,9 +754,9 @@ YY_DECL
 		}
 
 	{
-#line 12 "Code-lex.l"
+#line 23 "Code-lex.l"
 
-#line 688 "lex.yy.c"
+#line 760 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -711,13 +783,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 17 )
+				if ( yy_current_state >= 85 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (flex_int16_t) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 17 );
+		while ( yy_base[yy_current_state] != 152 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -743,21 +815,63 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 13 "Code-lex.l"
-{BEGIN SECTION_1}
+#line 24 "Code-lex.l"
+{BEGIN CAPTATITULO_SECTION;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 15 "Code-lex.l"
-{EscribeSection(yytext)}
+#line 25 "Code-lex.l"
+{BEGIN CAPTATITULO_SECTION;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 16 "Code-lex.l"
+#line 26 "Code-lex.l"
+{BEGIN CAPTATITULO_SUBSECTION;}
+	YY_BREAK
+case 4:
+YY_RULE_SETUP
+#line 27 "Code-lex.l"
+{BEGIN CAPTATEXTO;}
+	YY_BREAK
+case 5:
+YY_RULE_SETUP
+#line 28 "Code-lex.l"
+{BEGIN CAPTACODIGO;}
+	YY_BREAK
+case 6:
+YY_RULE_SETUP
+#line 30 "Code-lex.l"
+{EscribeSection(yytext); BEGIN SECTION_1;}
+	YY_BREAK
+case 7:
+YY_RULE_SETUP
+#line 31 "Code-lex.l"
+{EscribeSubsection(yytext);BEGIN SECTION_1;}
+	YY_BREAK
+case 8:
+/* rule 8 can match eol */
+YY_RULE_SETUP
+#line 32 "Code-lex.l"
+{EscribeTexto(yytext);BEGIN SECTION_1;}
+	YY_BREAK
+case 9:
+/* rule 9 can match eol */
+YY_RULE_SETUP
+#line 33 "Code-lex.l"
+{EscribeMinted(yytext);BEGIN SECTION_1;}
+	YY_BREAK
+case 10:
+YY_RULE_SETUP
+#line 35 "Code-lex.l"
 ECHO;
 	YY_BREAK
-#line 760 "lex.yy.c"
+#line 869 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
+case YY_STATE_EOF(SECTION_1):
+case YY_STATE_EOF(CAPTATITULO_SECTION):
+case YY_STATE_EOF(CAPTATITULO_SUBSECTION):
+case YY_STATE_EOF(CAPTATEXTO):
+case YY_STATE_EOF(CAPTACODIGO):
 	yyterminate();
 
 	case YY_END_OF_BUFFER:
@@ -1049,7 +1163,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 17 )
+			if ( yy_current_state >= 85 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (flex_int16_t) yy_c];
@@ -1077,11 +1191,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 17 )
+		if ( yy_current_state >= 85 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (flex_int16_t) yy_c];
-	yy_is_jam = (yy_current_state == 16);
+	yy_is_jam = (yy_current_state == 84);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1757,7 +1871,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 16 "Code-lex.l"
+#line 35 "Code-lex.l"
 
 
 
@@ -1779,44 +1893,134 @@ int main(int argc, char*argv[]){
 
   Cabecera();
   yylex();
+  Final();
   return 0;
 }
 
-void escribir_datos(int dato1, int dato2, int dato3){
-  printf("Num_caracteres=%d\tNum_palabras=%d\tNum_lineas=%d\n",dato1, dato2, dato3);
-}
-
 void EscribeSection(char* cadena){
+  // fputs("\section{", fp);
+  FILE* fin = fopen("section.txt","rt");
+  char* texto;
+  char tx;
+  char otro;
+  tx = fgetc(fin);
+  while (tx != EOF)
+ 	{
+    otro = tx;
+ 		fputc( otro, fp );
+    tx = fgetc(fin);
+ 	}
+  fputs(cadena, fp);
+  fclose ( fin);
+  FILE* fon = fopen("endsection.txt","rt");
+  char t;
+  t = fgetc(fon);
+  fputc(t, fp);
 
+  fclose ( fon);
 }
 
 void EscribeSubsection(char* cadena){
-
+  FILE* fin = fopen("subsection.txt","rt");
+  char* texto;
+  char tx;
+  char otro;
+  tx = fgetc(fin);
+  while (tx != EOF)
+ 	{
+    otro = tx;
+ 		fputc( otro, fp );
+    tx = fgetc(fin);
+ 	}
+  fputs(cadena, fp);
+  fclose ( fin);
+  FILE* fon = fopen("endsection.txt","rt");
+  char t;
+  t = fgetc(fon);
+  fputc(t, fp);
+  t = fgetc(fon);
+  fputc(t, fp);
+  fclose ( fon);
 }
 
 void EscribeMinted(char*cadena){
-
+  FILE* fin = fopen("beginminted.txt","rt");
+  char* texto;
+  char tx;
+  char otro;
+  tx = fgetc(fin);
+  while (tx != EOF)
+ 	{
+    otro = tx;
+ 		fputc( otro, fp );
+    tx = fgetc(fin);
+ 	}
+  fputs(cadena, fp);
+  fclose ( fin);
+  FILE* fon = fopen("endminted.txt","rt");
+  tx = fgetc(fon);
+  while (tx != EOF)
+ 	{
+    otro = tx;
+ 		fputc( otro, fp );
+    tx = fgetc(fon);
+ 	}
+  fclose ( fon);
 }
+void EscribeTexto(char* cadena){
+	//printf("Recibidooo desde texto %s\nFin de la norma",cadena );
+	int i = 0;
+	while (cadena[i] != '\0'){
+    if((cadena[i] != '/' || cadena[i+1] != '/')){
+      if(cadena[i] != '#'){
+        fputc(cadena[i], fp);
+        i++;
+      }
+      else{
+        i++;
+      }
 
+		}
+		else{
+			i= i+2;
+		}
+	}
+}
 void Cabecera(){
-  ifstream fin("./Latex/Cabecera.txt".c_str());
-	if(!fin){
-		cout << "no se pue"<<endl;
+  FILE* fin = fopen("Cabecera.txt","rt");
+	if(fin == NULL){
+    printf("El fichero no se puede abrir\n");
+    exit(-1);
 	}
-	string texto;
-	while(getline(fin,texto)){
-		fp << texto<<endl;
-	}
-	fin.clear();
+	char texto;
+  char otro;
+  texto = fgetc(fin);
+  while (texto != EOF)
+ 	{
+    otro = texto;
+ 		fputc( otro, fp );
+    texto = fgetc(fin);
+ 	}
+	// fin.clear();
+  fclose ( fin);
 }
 
 void Final(){
-
-}
-
-
-
-void Detectar(){
-  printf("Detectada cabecera\n")
+  FILE* fin = fopen("Final.txt","rt");
+	if(fin == NULL){
+    printf("El fichero no se puede abrir\n");
+    exit(-1);
+	}
+	char texto;
+  char otro;
+  texto = fgetc(fin);
+  while (texto != EOF)
+ 	{
+    otro = texto;
+ 		fputc( otro, fp );
+    texto = fgetc(fin);
+ 	}
+	// fin.clear();
+  fclose ( fin);
 }
 
