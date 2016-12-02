@@ -1,9 +1,0 @@
-//#Section: Esta es la seccion 1
-//#Section: Esta es la seccion 2
-//#Subsection: Esta el la subseccion 1
-//#Text: Este es el
-//primer texto
-//con varias lineas
-//#EndText:
-ñlkjñlkjñlkjñlkjEsdsafjsd
-//#Code: Este es el primer codigo #EndCode:

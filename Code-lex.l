@@ -8,34 +8,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 int nc, np, nl;
+char*code;
 FILE* fp;
 
 void EscribeSection(char* cadena);
 
 void EscribeSubsection(char* cadena);
 
-void EscribeTexto(char* cadena);
+void EscribeTexto(char* cadena, int tamanio);
 
-void EscribeMinted(char* cadena);
+void EscribeMinted(char* cadena, int tam);
 
-//void Cabecera();
+void Cabecera();
+void Final();
 %}
 %%
-.+"#Section:"						{BEGIN CAPTATITULO_SECTION;}
-<SECTION_1>.*"#Section:"			{BEGIN CAPTATITULO_SECTION;}
-<SECTION_1>.*"#Subsection:"			{BEGIN CAPTATITULO_SUBSECTION;}
-<SECTION_1>.*"#Text:"				{BEGIN CAPTATEXTO;}
-<SECTION_1>.*"#Code:"				{BEGIN CAPTACODIGO;}
+"#Section:"						{BEGIN CAPTATITULO_SECTION;}
+<SECTION_1>"#Section:"			{BEGIN CAPTATITULO_SECTION;}
+<SECTION_1>"#Subsection:"		{BEGIN CAPTATITULO_SUBSECTION;}
+<SECTION_1>"#Text:"				{BEGIN CAPTATEXTO;}
+<SECTION_1>"#Code:"				{BEGIN CAPTACODIGO;}
 
-<CAPTATITULO_SECTION>.+				{EscribeSection(yytext); BEGIN SECTION_1;}
-<CAPTATITULO_SUBSECTION>.+			{EscribeSubsection(yytext);BEGIN SECTION_1;}
-<CAPTATEXTO>(.|\n)*"#EndText"		{EscribeTexto(yytext);BEGIN SECTION_1;}
-<CAPTACODIGO>(.|\n)*"#EndCode"		{EscribeMinted(yytext);BEGIN SECTION_1;}
+<CAPTATITULO_SECTION>.+			{EscribeSection(yytext); BEGIN SECTION_1;}
+<CAPTATITULO_SUBSECTION>.+		{EscribeSubsection(yytext);BEGIN SECTION_1;}
+<CAPTATEXTO>([^@])*@			{EscribeTexto(yytext, yyleng);BEGIN SECTION_1;}
+<CAPTACODIGO>([^@])*@			{EscribeMinted(yytext, yyleng);BEGIN SECTION_1;}
 
 %%
 
 int main(int argc, char*argv[]){
-  if(argc == 3){
+  if(argc == 4){
     yyin = fopen(argv[1],"rt");
     if(yyin == NULL){
       printf("El fichero %s no se puede abrir\n", argv[1]);
@@ -46,6 +48,7 @@ int main(int argc, char*argv[]){
       printf("El fichero %s no se puede abrir\n", argv[2]);
       exit(-1);
     }
+    code = argv[3];
   }
   else yyin = stdin;
   nc = np = nl = 0;
@@ -58,7 +61,7 @@ int main(int argc, char*argv[]){
 
 void EscribeSection(char* cadena){
   // fputs("\section{", fp);
-  FILE* fin = fopen("section.txt","rt");
+  FILE* fin = fopen("Latex/section.txt","rt");
   char* texto;
   char tx;
   char otro;
@@ -71,7 +74,7 @@ void EscribeSection(char* cadena){
  	}
   fputs(cadena, fp);
   fclose ( fin);
-  FILE* fon = fopen("endsection.txt","rt");
+  FILE* fon = fopen("Latex/endsection.txt","rt");
   char t;
   t = fgetc(fon);
   fputc(t, fp);
@@ -80,7 +83,7 @@ void EscribeSection(char* cadena){
 }
 
 void EscribeSubsection(char* cadena){
-  FILE* fin = fopen("subsection.txt","rt");
+  FILE* fin = fopen("Latex/subsection.txt","rt");
   char* texto;
   char tx;
   char otro;
@@ -93,7 +96,7 @@ void EscribeSubsection(char* cadena){
  	}
   fputs(cadena, fp);
   fclose ( fin);
-  FILE* fon = fopen("endsection.txt","rt");
+  FILE* fon = fopen("Latex/endsection.txt","rt");
   char t;
   t = fgetc(fon);
   fputc(t, fp);
@@ -102,8 +105,8 @@ void EscribeSubsection(char* cadena){
   fclose ( fon);
 }
 
-void EscribeMinted(char*cadena){
-  FILE* fin = fopen("beginminted.txt","rt");
+void EscribeMinted(char*cadena, int tam){
+  FILE* fin = fopen("Latex/beginminted.txt","rt");
   char* texto;
   char tx;
   char otro;
@@ -114,9 +117,33 @@ void EscribeMinted(char*cadena){
  		fputc( otro, fp );
     tx = fgetc(fin);
  	}
-  fputs(cadena, fp);
+  fputs(code, fp);
+
+  FILE* fen = fopen("Latex/endsection.txt","rt");
+  char t;
+  t = fgetc(fen);
+  fputc(t, fp);
+  t = fgetc(fen);
+  fputc(t, fp);
+  fclose ( fen);
+  int condition1;
+  int condition2;
+  int condition3;
+  for(int i = 0; i < tam-1;i++){
+  	condition1 = cadena[i] != '/' || cadena[i+1] != '/';
+  	condition2 = cadena[i] != '*' || cadena[i+1] != '/';
+  	condition3 = cadena[i] != '/' || cadena[i+1] != '*';
+  	if((condition1 && condition2) && condition3){
+  		fputc(cadena[i], fp);
+    	printf("\nEnviado el caracter %c\n",cadena[i]);	
+  	}
+  	else{
+  		i++;
+  	}
+    
+  }
   fclose ( fin);
-  FILE* fon = fopen("endminted.txt","rt");
+  FILE* fon = fopen("Latex/endminted.txt","rt");
   tx = fgetc(fon);
   while (tx != EOF)
  	{
@@ -126,27 +153,18 @@ void EscribeMinted(char*cadena){
  	}
   fclose ( fon);
 }
-void EscribeTexto(char* cadena){
-	//printf("Recibidooo desde texto %s\nFin de la norma",cadena );
-	int i = 0;
-	while (cadena[i] != '\0'){
+void EscribeTexto(char* cadena,int tamanio){
+  for(int i = 0; i < tamanio-1;i++){
     if((cadena[i] != '/' || cadena[i+1] != '/')){
-      if(cadena[i] != '#'){
         fputc(cadena[i], fp);
-        i++;
-      }
-      else{
-        i++;
-      }
-
 		}
 		else{
-			i= i+2;
+			i++;
 		}
-	}
+  }
 }
 void Cabecera(){
-  FILE* fin = fopen("Cabecera.txt","rt");
+  FILE* fin = fopen("Latex/Cabecera.txt","rt");
 	if(fin == NULL){
     printf("El fichero no se puede abrir\n");
     exit(-1);
@@ -165,7 +183,7 @@ void Cabecera(){
 }
 
 void Final(){
-  FILE* fin = fopen("Final.txt","rt");
+  FILE* fin = fopen("Latex/Final.txt","rt");
 	if(fin == NULL){
     printf("El fichero no se puede abrir\n");
     exit(-1);

@@ -14,6 +14,7 @@
 \usepackage[all]{xy}
 \usepackage[below]{placeins}
 \usepackage{subfigure}
+\usepackage{minted}
 \usepackage{eso-pic}
 \usepackage{lastpage}
 
@@ -23,19 +24,11 @@
 \vfill
 \centering
 \includegraphics[width=\paperwidth,height=\paperheight,
-keepaspectratio]{hola.jpg}
+keepaspectratio]{Latex/hola.jpg}
 \vfill
 }}}
 
 \DeclareGraphicsExtensions{.png,.pdf,.jpg,.gif }
 
-
-
-\title{Examen Teórico de la Constitución Española de 1978}
-\author{Nombre:............................  Apellidos:..............................................}
-\date{\today}
 \begin{document}
 \AddToShipoutPicture{\BackgroundPic}
-\maketitle
-\textbf{Responda a las preguntas marcando una X en la casilla correspondiente.}
-\begin{enumerate}

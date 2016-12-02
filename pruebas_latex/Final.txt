@@ -1,5 +1,0 @@
-
-\newpage
-
-\ClearShipoutPicture
-\end{document}
