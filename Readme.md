@@ -8,7 +8,7 @@ Hecho por:
 
 Traducctor de Comentarios de Código a Latex.
 
-Para poder hacer uso deeste programa es necesario tener instalada la librería minted de latex.
+Para poder hacer uso de este programa es necesario tener instalada la librería minted de latex.
 
 Para ejecutar la práctica debemos darle permiso de ejecución al archivo Compilacion.sh:
 
