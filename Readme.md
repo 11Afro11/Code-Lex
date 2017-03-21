@@ -21,3 +21,26 @@ Despues debemos de pasarle 3 parámetros a ese fichero:
 3. Lenguaje empleado en el primer fichero (Funciona bien en c, c++ y java)
 
 `./Compilacion <nombre>.c++ <nombre>.tex c++`
+
+
+## Método de empleo
+
+//#Section: Esta es la seccion 1
+
+//#Section: Esta es la seccion 2
+
+//#Subsection: Esta el la subseccion 1
+
+//#Text: Este es el
+
+//primer texto
+
+//con varias lineas
+
+//@
+
+//#Code:
+
+Código que queremos que se pase a pdf
+
+//@
