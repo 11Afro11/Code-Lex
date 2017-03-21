@@ -37,10 +37,10 @@ Despues debemos de pasarle 3 parámetros a ese fichero:
 
 //con varias lineas
 
-//@
+//@ Terminador del texto
 
 //#Code:
 
 Código que queremos que se pase a pdf
 
-//@
+//@ Terminador del código
